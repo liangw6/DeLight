@@ -1,0 +1,13 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
+{% if app_list %}
+  <ul>
+  {% for app in app_list %}
+    <!-- address has to follow the format of app_name:index_name-->
+    <li><a href="{% url app.address %}">{{ app.app_name }}</a></li>
+  {% endfor %}
+  </ul>
+{% else %}
+  <p>:( Sorry, no blog hosting apps are currently available. </p>
+{% endif %}
