@@ -1,0 +1,8 @@
+.template-card .mdl-card__media{
+  cursor: pointer;
+  height: 250px;
+}
+.hello{
+background-image: url('./image/hello.gif');
+}
+

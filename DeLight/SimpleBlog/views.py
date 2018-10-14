@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-# Create your views here.
+from .models import IndexCard
+
 def index(request):
-  return HttpResponse('Hello, World! (simpe place holder)')
+  blog_list = IndexCard.objects.order_by('-pub_date')
+
+  return render(request, 'SimpleBlog/index.html', {'blog_list':blog_list})
